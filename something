@@ -1,0 +1,404 @@
+start_gui
+open_project C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.xpr
+open_project C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.xpr
+WARNING: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'.
+open_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 1016.605 ; gain = 0.000
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files C:/Users/briukvina.da/Repositories/antl-hdl-modem-master/MKA_AS/MKA_AS.v] -no_script -reset -force -quiet
+remove_files  C:/Users/briukvina.da/Repositories/antl-hdl-modem-master/MKA_AS/MKA_AS.v
+export_ip_user_files -of_objects  [get_files C:/Users/briukvina.da/Repositories/antl-hdl-modem-master/MKA_TC/MKA_TC.v] -no_script -reset -force -quiet
+remove_files  C:/Users/briukvina.da/Repositories/antl-hdl-modem-master/MKA_TC/MKA_TC.v
+export_ip_user_files -of_objects  [get_files C:/Users/briukvina.da/Repositories/antl-hdl-modem-master/MKA_TM/MKA_TM.v] -no_script -reset -force -quiet
+remove_files  C:/Users/briukvina.da/Repositories/antl-hdl-modem-master/MKA_TM/MKA_TM.v
+update_compile_order -fileset sources_1
+add_files -norecurse {C:/Users/briukvina.da/Repositories/antl-hdl-modem/MKA_AS/MKA_AS.v C:/Users/briukvina.da/Repositories/antl-hdl-modem/MKA_TC/MKA_TC.v C:/Users/briukvina.da/Repositories/antl-hdl-modem/MKA_TM/MKA_TM.v}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+create_ip -name axis_switch -vendor xilinx.com -library ip -version 1.1 -module_name axis_switcher
+set_property -dict [list CONFIG.NUM_SI {3} CONFIG.ROUTING_MODE {0} CONFIG.HAS_TSTRB {1} CONFIG.HAS_TKEEP {1} CONFIG.HAS_TLAST {1} CONFIG.TID_WIDTH {1} CONFIG.TDEST_WIDTH {1} CONFIG.TUSER_WIDTH {1} CONFIG.HAS_ACLKEN {1} CONFIG.ARB_ON_TLAST {1} CONFIG.Component_Name {axis_switcher}] [get_ips axis_switcher]
+WARNING: [Vivado 12-3523] Attempt to change 'Component_Name' from 'axis_switcher' to 'axis_switcher' is not allowed and is ignored.
+generate_target {instantiation_template} [get_files c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/ip/axis_switcher/axis_switcher.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'axis_switcher'...
+update_compile_order -fileset sources_1
+generate_target all [get_files  c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/ip/axis_switcher/axis_switcher.xci]
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'axis_switcher'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'axis_switcher'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'axis_switcher'...
+catch { config_ip_cache -export [get_ips -all axis_switcher] }
+export_ip_user_files -of_objects [get_files c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/ip/axis_switcher/axis_switcher.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/ip/axis_switcher/axis_switcher.xci]
+launch_runs axis_switcher_synth_1 -jobs 12
+[Thu Aug 25 10:48:05 2022] Launched axis_switcher_synth_1...
+Run output will be captured here: C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.runs/axis_switcher_synth_1/runme.log
+export_simulation -of_objects [get_files c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/ip/axis_switcher/axis_switcher.xci] -directory C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.ip_user_files -ipstatic_source_dir C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.cache/compile_simlib/modelsim} {questa=C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.cache/compile_simlib/questa} {riviera=C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.cache/compile_simlib/riviera} {activehdl=C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+set_property -dict [list CONFIG.NUM_SI {1} CONFIG.NUM_MI {3} CONFIG.TDEST_WIDTH {2} CONFIG.ARB_ON_TLAST {0} CONFIG.DECODER_REG {1}] [get_ips axis_switcher]
+generate_target all [get_files  c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/ip/axis_switcher/axis_switcher.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'axis_switcher'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'axis_switcher'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'axis_switcher'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'axis_switcher'...
+catch { config_ip_cache -export [get_ips -all axis_switcher] }
+export_ip_user_files -of_objects [get_files c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/ip/axis_switcher/axis_switcher.xci] -no_script -sync -force -quiet
+reset_run axis_switcher_synth_1
+launch_runs axis_switcher_synth_1 -jobs 12
+[Thu Aug 25 10:50:55 2022] Launched axis_switcher_synth_1...
+Run output will be captured here: C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.runs/axis_switcher_synth_1/runme.log
+export_simulation -of_objects [get_files c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/ip/axis_switcher/axis_switcher.xci] -directory C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.ip_user_files -ipstatic_source_dir C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.cache/compile_simlib/modelsim} {questa=C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.cache/compile_simlib/questa} {riviera=C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.cache/compile_simlib/riviera} {activehdl=C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+create_ip -name jtag_axi -vendor xilinx.com -library ip -version 1.2 -module_name jtag_axi_0
+set_property -dict [list CONFIG.PROTOCOL {2}] [get_ips jtag_axi_0]
+generate_target {instantiation_template} [get_files c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/ip/jtag_axi_0/jtag_axi_0.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'jtag_axi_0'...
+generate_target all [get_files  c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/ip/jtag_axi_0/jtag_axi_0.xci]
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'jtag_axi_0'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'jtag_axi_0'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'jtag_axi_0'...
+catch { config_ip_cache -export [get_ips -all jtag_axi_0] }
+export_ip_user_files -of_objects [get_files c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/ip/jtag_axi_0/jtag_axi_0.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/ip/jtag_axi_0/jtag_axi_0.xci]
+launch_runs jtag_axi_0_synth_1 -jobs 12
+[Thu Aug 25 11:07:08 2022] Launched jtag_axi_0_synth_1...
+Run output will be captured here: C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.runs/jtag_axi_0_synth_1/runme.log
+export_simulation -of_objects [get_files c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/ip/jtag_axi_0/jtag_axi_0.xci] -directory C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.ip_user_files -ipstatic_source_dir C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.cache/compile_simlib/modelsim} {questa=C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.cache/compile_simlib/questa} {riviera=C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.cache/compile_simlib/riviera} {activehdl=C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+export_ip_user_files -of_objects  [get_files c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/ip/jtag_axi_0/jtag_axi_0.xci] -no_script -reset -force -quiet
+remove_files  -fileset jtag_axi_0 c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/ip/jtag_axi_0/jtag_axi_0.xci
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.runs/jtag_axi_0_synth_1
+
+INFO: [Project 1-386] Moving file 'c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/ip/jtag_axi_0/jtag_axi_0.xci' from fileset 'jtag_axi_0' to fileset 'sources_1'.
+export_ip_user_files -of_objects  [get_files c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/ip/axis_switcher/axis_switcher.xci] -no_script -reset -force -quiet
+remove_files  -fileset axis_switcher c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/ip/axis_switcher/axis_switcher.xci
+INFO: [Project 1-386] Moving file 'c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/ip/axis_switcher/axis_switcher.xci' from fileset 'axis_switcher' to fileset 'sources_1'.
+create_ip -name jtag_axi -vendor xilinx.com -library ip -version 1.2 -module_name jtag_1
+set_property -dict [list CONFIG.PROTOCOL {2} CONFIG.Component_Name {jtag_1}] [get_ips jtag_1]
+WARNING: [Vivado 12-3523] Attempt to change 'Component_Name' from 'jtag_1' to 'jtag_1' is not allowed and is ignored.
+generate_target {instantiation_template} [get_files c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/ip/jtag_1/jtag_1.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'jtag_1'...
+generate_target all [get_files  c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/ip/jtag_1/jtag_1.xci]
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'jtag_1'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'jtag_1'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'jtag_1'...
+catch { config_ip_cache -export [get_ips -all jtag_1] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP jtag_1, cache-ID = 4e732878d95c7230; cache size = 3.285 MB.
+export_ip_user_files -of_objects [get_files c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/ip/jtag_1/jtag_1.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/ip/jtag_1/jtag_1.xci]
+INFO: [Vivado 12-3453] The given sub-design is up-to-date, no action was taken.  If a run is still desired, use the '-force' option for the file:'c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/ip/jtag_1/jtag_1.xci'
+export_simulation -of_objects [get_files c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/ip/jtag_1/jtag_1.xci] -directory C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.ip_user_files -ipstatic_source_dir C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.cache/compile_simlib/modelsim} {questa=C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.cache/compile_simlib/questa} {riviera=C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.cache/compile_simlib/riviera} {activehdl=C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+create_ip -name jtag_axi -vendor xilinx.com -library ip -version 1.2 -module_name jtag_2
+set_property -dict [list CONFIG.Component_Name {jtag_2}] [get_ips jtag_2]
+WARNING: [Vivado 12-3523] Attempt to change 'Component_Name' from 'jtag_2' to 'jtag_2' is not allowed and is ignored.
+generate_target {instantiation_template} [get_files c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/ip/jtag_2/jtag_2.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'jtag_2'...
+update_compile_order -fileset sources_1
+generate_target all [get_files  c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/ip/jtag_2/jtag_2.xci]
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'jtag_2'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'jtag_2'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'jtag_2'...
+catch { config_ip_cache -export [get_ips -all jtag_2] }
+export_ip_user_files -of_objects [get_files c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/ip/jtag_2/jtag_2.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/ip/jtag_2/jtag_2.xci]
+launch_runs jtag_2_synth_1 -jobs 12
+[Thu Aug 25 11:09:34 2022] Launched jtag_2_synth_1...
+Run output will be captured here: C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.runs/jtag_2_synth_1/runme.log
+export_simulation -of_objects [get_files c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/ip/jtag_2/jtag_2.xci] -directory C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.ip_user_files -ipstatic_source_dir C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.cache/compile_simlib/modelsim} {questa=C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.cache/compile_simlib/questa} {riviera=C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.cache/compile_simlib/riviera} {activehdl=C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+create_ip -name jtag_axi -vendor xilinx.com -library ip -version 1.2 -module_name jtag_3
+set_property -dict [list CONFIG.Component_Name {jtag_3}] [get_ips jtag_3]
+WARNING: [Vivado 12-3523] Attempt to change 'Component_Name' from 'jtag_3' to 'jtag_3' is not allowed and is ignored.
+generate_target {instantiation_template} [get_files c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/ip/jtag_3/jtag_3.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'jtag_3'...
+update_compile_order -fileset sources_1
+set_property -dict [list CONFIG.PROTOCOL {2}] [get_ips jtag_3]
+generate_target all [get_files  c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/ip/jtag_3/jtag_3.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'jtag_3'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'jtag_3'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'jtag_3'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'jtag_3'...
+catch { config_ip_cache -export [get_ips -all jtag_3] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP jtag_3, cache-ID = 4e732878d95c7230; cache size = 3.285 MB.
+export_ip_user_files -of_objects [get_files c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/ip/jtag_3/jtag_3.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/ip/jtag_3/jtag_3.xci]
+INFO: [Vivado 12-3453] The given sub-design is up-to-date, no action was taken.  If a run is still desired, use the '-force' option for the file:'c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/ip/jtag_3/jtag_3.xci'
+export_simulation -of_objects [get_files c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/ip/jtag_3/jtag_3.xci] -directory C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.ip_user_files -ipstatic_source_dir C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.cache/compile_simlib/modelsim} {questa=C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.cache/compile_simlib/questa} {riviera=C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.cache/compile_simlib/riviera} {activehdl=C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/ip/jtag_2/jtag_2.xci] -no_script -reset -force -quiet
+remove_files  -fileset jtag_2 c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/ip/jtag_2/jtag_2.xci
+INFO: [Project 1-386] Moving file 'c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/ip/jtag_2/jtag_2.xci' from fileset 'jtag_2' to fileset 'sources_1'.
+export_ip_user_files -of_objects  [get_files c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/ip/jtag_3/jtag_3.xci] -no_script -reset -force -quiet
+remove_files  c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/ip/jtag_3/jtag_3.xci
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files C:/Users/briukvina.da/Repositories/antl-hdl-modem/MKA_TC/MKA_TC.v] -no_script -reset -force -quiet
+remove_files  C:/Users/briukvina.da/Repositories/antl-hdl-modem/MKA_TC/MKA_TC.v
+export_ip_user_files -of_objects  [get_files C:/Users/briukvina.da/Repositories/antl-hdl-modem/MKA_TM/MKA_TM.v] -no_script -reset -force -quiet
+remove_files  C:/Users/briukvina.da/Repositories/antl-hdl-modem/MKA_TM/MKA_TM.v
+launch_runs synth_1 -jobs 12
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/ip/jtag_1/jtag_1.xci' is already up-to-date
+[Thu Aug 25 12:10:26 2022] Launched synth_1...
+Run output will be captured here: C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 12
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/ip/jtag_1/jtag_1.xci' is already up-to-date
+[Thu Aug 25 12:11:15 2022] Launched synth_1...
+Run output will be captured here: C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 12
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/ip/jtag_1/jtag_1.xci' is already up-to-date
+[Thu Aug 25 12:12:30 2022] Launched synth_1...
+Run output will be captured here: C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 12
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/ip/jtag_1/jtag_1.xci' is already up-to-date
+[Thu Aug 25 12:13:49 2022] Launched synth_1...
+Run output will be captured here: C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 12
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/ip/jtag_1/jtag_1.xci' is already up-to-date
+[Thu Aug 25 12:16:37 2022] Launched synth_1...
+Run output will be captured here: C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 12
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/ip/jtag_1/jtag_1.xci' is already up-to-date
+[Thu Aug 25 12:17:36 2022] Launched impl_1...
+Run output will be captured here: C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.runs/impl_1/runme.log
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+Command: synth_design -rtl -rtl_skip_mlo -name rtl_1
+Starting synth_design
+Using part: xc7a100tcsg324-1
+Top: top_mka
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1536.781 ; gain = 224.438
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top_mka' [C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/new/top_mka.v:1]
+INFO: [Synth 8-6157] synthesizing module 'MKA_AS' [C:/Users/briukvina.da/Repositories/antl-hdl-modem/MKA_AS/MKA_AS.v:3]
+	Parameter ADDR_W bound to: 16 - type: integer 
+	Parameter DATA_W bound to: 32 - type: integer 
+	Parameter STRB_W bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'MKA_AS' (1#1) [C:/Users/briukvina.da/Repositories/antl-hdl-modem/MKA_AS/MKA_AS.v:3]
+WARNING: [Synth 8-689] width (1) of port connection 'axil_bresp' does not match port width (2) of module 'MKA_AS' [C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/new/top_mka.v:31]
+WARNING: [Synth 8-689] width (1) of port connection 'axil_rdata' does not match port width (32) of module 'MKA_AS' [C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/new/top_mka.v:39]
+WARNING: [Synth 8-689] width (1) of port connection 'axil_rresp' does not match port width (2) of module 'MKA_AS' [C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/new/top_mka.v:40]
+WARNING: [Synth 8-7071] port 'csr_asmka_as_ctrl_an_rst_out' of module 'MKA_AS' is unconnected for instance 'as' [C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/new/top_mka.v:7]
+WARNING: [Synth 8-7071] port 'csr_asmka_as_stat_an_lgn_out' of module 'MKA_AS' is unconnected for instance 'as' [C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/new/top_mka.v:7]
+WARNING: [Synth 8-7071] port 'csr_asmka_as_stat_an_lant_out' of module 'MKA_AS' is unconnected for instance 'as' [C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/new/top_mka.v:7]
+WARNING: [Synth 8-7071] port 'csr_asmka_as_stat_an_sta_out' of module 'MKA_AS' is unconnected for instance 'as' [C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/new/top_mka.v:7]
+WARNING: [Synth 8-7071] port 'csr_asmka_as_stat_an_lck_out' of module 'MKA_AS' is unconnected for instance 'as' [C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/new/top_mka.v:7]
+WARNING: [Synth 8-7071] port 'csr_asmka_as_stat_an_agn_out' of module 'MKA_AS' is unconnected for instance 'as' [C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/new/top_mka.v:7]
+WARNING: [Synth 8-7071] port 'csr_asmka_as_stat_an_act_out' of module 'MKA_AS' is unconnected for instance 'as' [C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/new/top_mka.v:7]
+WARNING: [Synth 8-7023] instance 'as' of module 'MKA_AS' has 39 connections declared, but only 32 given [C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/new/top_mka.v:7]
+INFO: [Synth 8-6157] synthesizing module 'jtag_1' [C:/Users/briukvina.da/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-1848-ANTL-PC-TOP/realtime/jtag_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'jtag_1' (2#1) [C:/Users/briukvina.da/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-1848-ANTL-PC-TOP/realtime/jtag_1_stub.v:6]
+WARNING: [Synth 8-689] width (1) of port connection 'm_axi_awaddr' does not match port width (32) of module 'jtag_1' [C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/new/top_mka.v:51]
+WARNING: [Synth 8-689] width (1) of port connection 'm_axi_awprot' does not match port width (3) of module 'jtag_1' [C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/new/top_mka.v:52]
+WARNING: [Synth 8-689] width (1) of port connection 'm_axi_wdata' does not match port width (32) of module 'jtag_1' [C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/new/top_mka.v:55]
+WARNING: [Synth 8-689] width (1) of port connection 'm_axi_wstrb' does not match port width (4) of module 'jtag_1' [C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/new/top_mka.v:56]
+WARNING: [Synth 8-689] width (1) of port connection 'm_axi_araddr' does not match port width (32) of module 'jtag_1' [C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/new/top_mka.v:63]
+WARNING: [Synth 8-689] width (1) of port connection 'm_axi_arprot' does not match port width (3) of module 'jtag_1' [C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/new/top_mka.v:64]
+INFO: [Synth 8-6155] done synthesizing module 'top_mka' (3#1) [C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/new/top_mka.v:1]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1593.266 ; gain = 280.922
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1593.266 ; gain = 280.922
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1593.266 ; gain = 280.922
+---------------------------------------------------------------------------------
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.gen/sources_1/ip/jtag_1/jtag_1.dcp' for cell 'jt_1'
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.085 . Memory (MB): peak = 1596.668 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 51 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2020.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.gen/sources_1/ip/jtag_1/constraints/jtag_axi.xdc] for cell 'jt_1/inst'
+Finished Parsing XDC File [c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.gen/sources_1/ip/jtag_1/constraints/jtag_axi.xdc] for cell 'jt_1/inst'
+Parsing XDC File [C:/Users/briukvina.da/Repositories/project_1/Nexys4DDR_C.xdc]
+Finished Parsing XDC File [C:/Users/briukvina.da/Repositories/project_1/Nexys4DDR_C.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Xilinx/Vivado/2020.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_mka_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_mka_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Project 1-1715] 1 XPM XDC files have been applied to the design.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1706.148 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 48 instances were transformed.
+  RAM64M => RAM64M (RAMD64E(x4)): 40 instances
+  RAM64X1D => RAM64X1D (RAMD64E(x2)): 8 instances
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:00:18 ; elapsed = 00:00:11 . Memory (MB): peak = 1860.309 ; gain = 547.965
+15 Infos, 17 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:17 . Memory (MB): peak = 1860.309 ; gain = 843.703
+close_design
+open_run impl_1
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.100 . Memory (MB): peak = 1933.152 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 25 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2020.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.201 . Memory (MB): peak = 2300.516 ; gain = 0.000
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.201 . Memory (MB): peak = 2300.516 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 2300.516 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 10 instances were transformed.
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 6 instances
+  RAM64M => RAM64M (RAMD64E(x4)): 4 instances
+
+open_run: Time (s): cpu = 00:00:15 ; elapsed = 00:00:11 . Memory (MB): peak = 2381.383 ; gain = 448.230
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/ip/jtag_1/jtag_1.xci' is already up-to-date
+[Thu Aug 25 12:22:06 2022] Launched impl_1...
+Run output will be captured here: C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.runs/impl_1/runme.log
+open_hw_manager
+connect_hw_server -allow_non_jtag
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2020.2
+  **** Build date : Nov 18 2020 at 10:01:48
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:3042
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2020.2
+  ****** Build date   : Nov 04 2020-00:02:56
+    **** Build number : 2020.2.1604437376
+      ** Copyright 2017-2020 Xilinx, Inc. All Rights Reserved.
+
+
+
+connect_hw_server: Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 2411.309 ; gain = 2.605
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292745376A
+open_hw_target: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 3945.539 ; gain = 1534.230
+set_property PROGRAM.FILE {C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.runs/impl_1/top_mka.bit} [get_hw_devices xc7a100t_0]
+set_property PROBES.FILE {C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.runs/impl_1/top_mka.ltx} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.runs/impl_1/top_mka.ltx} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1435] Device xc7a100t (JTAG device index = 0) is not programmed (DONE status = 0).
+set_property PROBES.FILE {C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.runs/impl_1/top_mka.ltx} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.runs/impl_1/top_mka.ltx} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.runs/impl_1/top_mka.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-2302] Device xc7a100t (JTAG device index = 0) is programmed with a design that has 1 JTAG AXI core(s).
+create_hw_axi_txn read_txn [get_hw_axis hw_axi_1] -type READ -address 00000004 -len 1
+read_txn
+run_hw_axi [get_hw_axi_txns read_txn]
+INFO: [Labtoolstcl 44-481] READ DATA is: 00000000
+run_hw_axi [get_hw_axi_txns read_txn]
+INFO: [Labtoolstcl 44-481] READ DATA is: 00000000
+run_hw_axi [get_hw_axi_txns read_txn]
+INFO: [Labtoolstcl 44-481] READ DATA is: 00000000
+undo
+INFO: [Common 17-17] undo 'set_property PROGRAM.FILE {C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.runs/impl_1/top_mka.bit} [get_hw_devices xc7a100t_0]'
+create_hw_axi_txn write_txn [get_hw_axis hw_axi_1] -type WRITE -address 00000000 -len 1 -data {11111111}
+write_txn
+create_hw_axi_txn write_txn [get_hw_axis hw_axi_1] -type WRITE -address 00000004 -len 1 -data {11111111}
+ERROR: [Labtools 27-1991] Can not create a second hw_axi_txn object with the same name [write_txn].  Use the -force option to override this error check.
+create_hw_axi_txn write_txn2 [get_hw_axis hw_axi_1] -type WRITE -address 00000004 -len 1 -data {11111111}
+write_txn2
+run_hw_axi [get_hw_axi_txns write_txn2]
+INFO: [Labtoolstcl 44-481] WRITE DATA is: 11111111
+run_hw_axi [get_hw_axi_txns read_txn]
+INFO: [Labtoolstcl 44-481] READ DATA is: 00000001
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+Command: synth_design -rtl -rtl_skip_mlo -name rtl_1
+Starting synth_design
+Using part: xc7a100tcsg324-1
+Top: top_mka
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 4129.480 ; gain = 93.906
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top_mka' [C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/new/top_mka.v:1]
+INFO: [Synth 8-6157] synthesizing module 'MKA_AS' [C:/Users/briukvina.da/Repositories/antl-hdl-modem/MKA_AS/MKA_AS.v:3]
+	Parameter ADDR_W bound to: 16 - type: integer 
+	Parameter DATA_W bound to: 32 - type: integer 
+	Parameter STRB_W bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'MKA_AS' (1#1) [C:/Users/briukvina.da/Repositories/antl-hdl-modem/MKA_AS/MKA_AS.v:3]
+WARNING: [Synth 8-689] width (1) of port connection 'axil_bresp' does not match port width (2) of module 'MKA_AS' [C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/new/top_mka.v:31]
+WARNING: [Synth 8-689] width (1) of port connection 'axil_rdata' does not match port width (32) of module 'MKA_AS' [C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/new/top_mka.v:39]
+WARNING: [Synth 8-689] width (1) of port connection 'axil_rresp' does not match port width (2) of module 'MKA_AS' [C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/new/top_mka.v:40]
+WARNING: [Synth 8-7071] port 'csr_asmka_as_ctrl_an_rst_out' of module 'MKA_AS' is unconnected for instance 'as' [C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/new/top_mka.v:7]
+WARNING: [Synth 8-7071] port 'csr_asmka_as_stat_an_lgn_out' of module 'MKA_AS' is unconnected for instance 'as' [C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/new/top_mka.v:7]
+WARNING: [Synth 8-7071] port 'csr_asmka_as_stat_an_lant_out' of module 'MKA_AS' is unconnected for instance 'as' [C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/new/top_mka.v:7]
+WARNING: [Synth 8-7071] port 'csr_asmka_as_stat_an_sta_out' of module 'MKA_AS' is unconnected for instance 'as' [C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/new/top_mka.v:7]
+WARNING: [Synth 8-7071] port 'csr_asmka_as_stat_an_lck_out' of module 'MKA_AS' is unconnected for instance 'as' [C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/new/top_mka.v:7]
+WARNING: [Synth 8-7071] port 'csr_asmka_as_stat_an_agn_out' of module 'MKA_AS' is unconnected for instance 'as' [C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/new/top_mka.v:7]
+WARNING: [Synth 8-7071] port 'csr_asmka_as_stat_an_act_out' of module 'MKA_AS' is unconnected for instance 'as' [C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/new/top_mka.v:7]
+WARNING: [Synth 8-7023] instance 'as' of module 'MKA_AS' has 39 connections declared, but only 32 given [C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/new/top_mka.v:7]
+INFO: [Synth 8-6157] synthesizing module 'jtag_1' [C:/Users/briukvina.da/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-1848-ANTL-PC-TOP/realtime/jtag_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'jtag_1' (2#1) [C:/Users/briukvina.da/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-1848-ANTL-PC-TOP/realtime/jtag_1_stub.v:6]
+WARNING: [Synth 8-689] width (1) of port connection 'm_axi_awaddr' does not match port width (32) of module 'jtag_1' [C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/new/top_mka.v:51]
+WARNING: [Synth 8-689] width (1) of port connection 'm_axi_awprot' does not match port width (3) of module 'jtag_1' [C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/new/top_mka.v:52]
+WARNING: [Synth 8-689] width (1) of port connection 'm_axi_wdata' does not match port width (32) of module 'jtag_1' [C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/new/top_mka.v:55]
+WARNING: [Synth 8-689] width (1) of port connection 'm_axi_wstrb' does not match port width (4) of module 'jtag_1' [C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/new/top_mka.v:56]
+WARNING: [Synth 8-689] width (1) of port connection 'm_axi_araddr' does not match port width (32) of module 'jtag_1' [C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/new/top_mka.v:63]
+WARNING: [Synth 8-689] width (1) of port connection 'm_axi_arprot' does not match port width (3) of module 'jtag_1' [C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/new/top_mka.v:64]
+INFO: [Synth 8-6155] done synthesizing module 'top_mka' (3#1) [C:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.srcs/sources_1/new/top_mka.v:1]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 4144.543 ; gain = 108.969
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 4166.449 ; gain = 130.875
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 4166.449 ; gain = 130.875
+---------------------------------------------------------------------------------
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.gen/sources_1/ip/jtag_1/jtag_1.dcp' for cell 'jt_1'
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.085 . Memory (MB): peak = 4186.395 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 51 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2020.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.gen/sources_1/ip/jtag_1/constraints/jtag_axi.xdc] for cell 'jt_1/inst'
+Finished Parsing XDC File [c:/Users/briukvina.da/Repositories/MKA_cheker/MKA_cheker.gen/sources_1/ip/jtag_1/constraints/jtag_axi.xdc] for cell 'jt_1/inst'
+Parsing XDC File [C:/Users/briukvina.da/Repositories/project_1/Nexys4DDR_C.xdc]
+Finished Parsing XDC File [C:/Users/briukvina.da/Repositories/project_1/Nexys4DDR_C.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Xilinx/Vivado/2020.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_mka_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_mka_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Project 1-1715] 1 XPM XDC files have been applied to the design.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 4268.410 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 48 instances were transformed.
+  RAM64M => RAM64M (RAMD64E(x4)): 40 instances
+  RAM64X1D => RAM64X1D (RAMD64E(x2)): 8 instances
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:00:16 ; elapsed = 00:00:10 . Memory (MB): peak = 4282.359 ; gain = 246.785
+14 Infos, 17 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:16 ; elapsed = 00:00:10 . Memory (MB): peak = 4282.359 ; gain = 246.785
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210292745376A
